@@ -1,8 +1,8 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ¼³Á¤ ºÎºÐ
+ï»¿;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; ì„¤ì • ë¶€ë¶„
 
-;F1À» ´­·¶À»¶§ PyramidFloor °ª¿¡ µû¶ó¼­ ÀÌÁß ÇÇ¶ó¹Ìµå¸¦ »ý¼ºÇÏ´Â ¼Ò½º
+;F1ì„ ëˆŒë €ì„ë•Œ PyramidFloor ê°’ì— ë”°ë¼ì„œ ì´ì¤‘ í”¼ë¼ë¯¸ë“œë¥¼ ìƒì„±í•˜ëŠ” ì†ŒìŠ¤
 
-;ÇÇ¶ó¹Ìµå ¼³Á¤
+;í”¼ë¼ë¯¸ë“œ ì„¤ì •
 Block := "*"
 PyramidFloor := 8
 
@@ -28,4 +28,4 @@ Loop %PyramidFloor%
 Send {Enter}
 CurrentPower := CurrentPower - 1
 }
-Send %Block% ; ¿ª»ï°¢ÇüÀÇ °æ¿ì ¸¶Áö¸· ÇÑ¹øÀº Ã³¸® ¹æ¹ýÀÌ ¾øÀ¸¹Ç·Î ÇÏ³ª ¼öµ¿À¸·Î Ãß°¡...
+Send %Block% ; ì—­ì‚¼ê°í˜•ì˜ ê²½ìš° ë§ˆì§€ë§‰ í•œë²ˆì€ ì²˜ë¦¬ ë°©ë²•ì´ ì—†ìœ¼ë¯€ë¡œ í•˜ë‚˜ ìˆ˜ë™ìœ¼ë¡œ ì¶”ê°€...
