@@ -1,6 +1,6 @@
 ﻿;This code use temp file (for html parsing) file name is tempformaple.txt
 
-inputbox, a, 파풀라투스 클리어횟수 조회, 닉네임을 입력하세요,,300,100
+inputbox, a, 파모칸 클리어횟수 조회, 닉네임을 입력하세요,,300,100
 {
 if errorlevel
 ;if click cancel button
