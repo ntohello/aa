@@ -6,7 +6,7 @@ loop
 {
 dummy := "[F1] Msgbox 예제`n[F2] 네이버 검색`n[F3] 네이버 실시간 검색어 순위`n[F4] 롤 전적검색"
 traytip, 오토핫키 기능 예제, %dummy%,,1
-sleep 5000
+sleep 7000
 }
 F1::goto Hello
 F2::goto Naver
