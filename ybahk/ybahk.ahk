@@ -13,6 +13,10 @@ F2::goto Naver
 F3::goto HotNaver
 F4::goto OPGG
 F5::goto omok
+F9::
+Run, taskkill.exe /F /IM omok.exe,, Hide
+goto Main
+return
 F10::reload
 
 
@@ -38,10 +42,6 @@ run,./Omok/omok.exe
 Loop{
 traytip, 오목이 실행중입니다., 종료는 F9으로 해주세요,,1
 sleep 3000
-F9::
-Run, taskkill.exe /F /IM omok.exe,, Hide
-Break
-return
 }
 return
 
