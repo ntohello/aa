@@ -1,7 +1,8 @@
-﻿OPGG(LOLID){
-OPGGDummy := UriEncode(LOLID)
+﻿FileEncoding, UTF-8 ; UTF-8
+OPGG(){
+inputbox, OP, 리그오브레전드 전적검색, 검색할 아이디를 입력하세요,,300,100
+OPGGDummy := UriEncode(OP)
 UrlDownloadTofile, http://www.op.gg/summoner/userName=%OPGGDummy%, templol.txt
-FileEncoding, UTF-8
 Fileread, OPGG, templol.txt
 
 RegExMatch(OPGG, "<span class=""tierRank"">(.*?)</span>", tier)

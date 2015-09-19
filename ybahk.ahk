@@ -1,4 +1,6 @@
-﻿#include ybahk-opgg.ahk ; OPGG Function Include Line "43" Github #1
+﻿FileEncoding, UTF-8 ; UTF-8
+#include ybahk-opgg.ahk ; OPGG Function Include Line "43" Github #1
+#include ybahk-naver.ahk ; Naver Function Include LIne "" Github #1
 Main:
 loop
 {
@@ -19,30 +21,15 @@ msgbox, Hello world
 return
 
 Naver:
-inputbox, N, 네이버 검색기, 검색할 내용을 입력하세요,,300,100
-UnicodeNaver := uriencode(N) ; 유니코드 변환한걸 받아줄 변수값
-run, http://search.naver.com/search.naver?where=nexearch&query=%UnicodeNaver%&sm=top_hty&fbm=0&ie=utf8
+Naver()
 return
 
 Hotnaver:
-UrlDownloadTofile, http://www.naver.com, tempnaver.txt
-FileEncoding, UTF-8
-Fileread, Naver, tempnaver.txt
-
-RegExMatch(Naver,"<select name=""query""(.*?)</select>",var)
-Stringreplace, var, var, <select name="query">,,All
-Stringreplace, var, var, </option>,,All
-Stringreplace, var, var, </select>,,All
-var := RegExReplace(var, "<option value=""(.*?"">)")
-
-
-msgbox, 네이버 실시간 검색어 순위~`n%var%
-FileDelete, tempnaver.txt
+HotNaver()
 return
 
 OPGG:
-inputbox, OP, 리그오브레전드 전적검색, 검색할 아이디를 입력하세요,,300,100
-OPGG(OP) ;Call ybahk-opgg & hand over Summoner ID
+OPGG() ;Call ybahk-opgg
 return
 
 
