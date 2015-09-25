@@ -1,6 +1,6 @@
 ﻿FileEncoding, UTF-8 ; UTF-8
-#include ybahk-opgg.ahk ; OPGG Function Include Line "32" Github #1
-#include ybahk-naver.ahk ; Naver Function Include LIne "24,28" Github #1
+#include ybahk-opgg.ahk ; OPGG Function Include Line "14" Github #1
+#include ybahk-naver.ahk ; Naver Function Include LIne "12,13" Github #1
 Main:
 loop
 {
