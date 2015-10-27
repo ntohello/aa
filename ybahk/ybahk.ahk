@@ -1,13 +1,13 @@
 FileEncoding, UTF-8 ; UTF-8
 #include ybahk-opgg.ahk ; OPGG Function Include Line "15" Github #1
 #include ybahk-naver.ahk ; Naver Function Include LIne "13,14" Github #1
-#include ybahk-pibonachi.ahk ; ìµœìƒì›
+#include ybahk-pibonachi.ahk ; ÃÖ»ó¿ø
 
 Main:
 loop
 {
-dummy := "[F1] Msgbox ì˜ˆì œ`n[F2] ë„¤ì´ë²„ ê²€ìƒ‰`n[F3] ë„¤ì´ë²„ ì‹¤ì‹œê°„ ê²€ìƒ‰ì–´ ìˆœìœ„`n[F4] ë¡¤ ì „ì ê²€ìƒ‰`n[F5] ì˜¤ëª©ê²Œì„ ì‹¤í–‰`n[F6] í”¼ë³´ë‚˜ì¹˜ í•¨ìˆ˜ê°’ êµ¬í•˜ê¸°"
-traytip, ì˜¤í† í•«í‚¤ ê¸°ëŠ¥ ì˜ˆì œ, %dummy%,,1
+dummy := "[F1] Msgbox ¿¹Á¦`n[F2] ³×ÀÌ¹ö °Ë»ö`n[F3] ³×ÀÌ¹ö ½Ç½Ã°£ °Ë»ö¾î ¼øÀ§`n[F4] ·Ñ ÀüÀû°Ë»ö`n[F5] ¿À¸ñ°ÔÀÓ ½ÇÇà`n[F6] ÇÇº¸³ªÄ¡ ÇÔ¼ö°ª ±¸ÇÏ±â"
+traytip, ¿ÀÅäÇÖÅ° ±â´É ¿¹Á¦, %dummy%,,1
 sleep 7000
 }
 F1::goto Hello
@@ -43,12 +43,12 @@ return
 omok:
 run,./Omok/omok.exe
 Loop{
-traytip, ì˜¤ëª©ì´ ì‹¤í–‰ì¤‘ì…ë‹ˆë‹¤., ì¢…ë£ŒëŠ” F9ìœ¼ë¡œ í•´ì£¼ì„¸ìš”,,1
+traytip, ¿À¸ñÀÌ ½ÇÇàÁßÀÔ´Ï´Ù., Á¾·á´Â F9À¸·Î ÇØÁÖ¼¼¿ä,,1
 sleep 3000
 }
 return
 
-pibo: ;ìµœìƒì› ë§Œë“¬
+pibo: ;ÃÖ»ó¿ø ¸¸µë
 pibo()
 return
 

@@ -1,30 +1,30 @@
-;ìŠ¤í¬ë¦½íŠ¸ì— ëŒ€í•œ ì„¤ëª…: í”¼ë³´ë‚˜ì¹˜ ìˆ˜ì—´ ë„£ì€ìˆ«ìžë²ˆì§¸ì˜ ìˆ˜ë¥¼ êµ¬í•œë‹¤
+;½ºÅ©¸³Æ®¿¡ ´ëÇÑ ¼³¸í: ÇÇº¸³ªÄ¡ ¼ö¿­ ³ÖÀº¼ýÀÚ¹øÂ°ÀÇ ¼ö¸¦ ±¸ÇÑ´Ù
 pibo(){
 pibomain:
-InputBox, p, í”¼ë³´ë‚˜ì¹˜, ëª‡ë²ˆì§¸ í”¼ë³´ë‚˜ì¹˜ ìˆ˜ë¥¼ ì•Œê³  ì‹¶ì€ê°€?`nì œìž‘ìž : ìµœìƒì›
+InputBox, p, ÇÇº¸³ªÄ¡, ¸î¹øÂ° ÇÇº¸³ªÄ¡ ¼ö¸¦ ¾Ë°í ½ÍÀº°¡?`nÁ¦ÀÛÀÚ : ÃÖ»ó¿ø
 if ErrorLevel
 {
-    MsgBox, ì·¨ì†Œí•˜ì…¨ìŠµë‹ˆë‹¤.
+    MsgBox, Ãë¼ÒÇÏ¼Ì½À´Ï´Ù.
 	return
 }
 
 ELSE
 if (p < 1)
 {
-    msgbox, 1ì´ìƒìœ¼ë¡œ ì§€ì •í•´ ì£¼ì„¸ìš”.
+    msgbox, 1ÀÌ»óÀ¸·Î ÁöÁ¤ÇØ ÁÖ¼¼¿ä.
     goto pibomain
     exitapp
 }
 
 if (1 < p < 30)
 n := fibget(p)
-msgbox, %p%ë²ˆì§¸ ìˆ«ìžëŠ” %n%
+msgbox, %p%¹øÂ° ¼ýÀÚ´Â %n%
 return
 
 if (p > 30)
 {
   n = (0.2)*sqrt 5 * {(1/2)**p}*[{(1+sqrt 5)**p} -{(1-sqrt 5)**p)}]
-  msgbox, %p%ë²ˆì§¸ ìˆ«ìžëŠ” %n%
+  msgbox, %p%¹øÂ° ¼ýÀÚ´Â %n%
   return
 }
 }
