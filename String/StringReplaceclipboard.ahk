@@ -1,0 +1,1 @@
+StringReplace, Clipboard, Clipboard, `r`n,, All
