@@ -1,4 +1,4 @@
-﻿FileEncoding, UTF-8 ; UTF-8
+FileEncoding, UTF-8 ; UTF-8
 OPGG(){
 inputbox, OP, 리그오브레전드 전적검색, 검색할 아이디를 입력하세요,,300,100
 if ErrorLevel
@@ -24,32 +24,42 @@ Stringreplace, tier, tier, Diamond,다이아,All
 Stringreplace, tier, tier, Master,마스터,All
 Stringreplace, tier, tier, Challenger,챌린저,All
 
-RegExMatch(OPGG, "<span class=""wins"">(.*?)</span>", win)
-Stringreplace, win, win, <span class="wins">,,All
+;Win
+RegExMatch(OPGG, "<span class=""Win"">(.*?)\)", win)
+Stringreplace, win, win, <span class="Win">,,All
 Stringreplace, win, win, </span>,,All
-
-RegExMatch(OPGG, "<span class=""losses"">(.*?)</span>", lose)
-Stringreplace, lose, lose, <span class="losses">,,All
-Stringreplace, lose, lose, </span>,,All
-
-RegExMatch(OPGG, "<span class=""winratio"">((.*?))</span>", winratio)
+Stringreplace, win, win, </div>,,All
+/*
+;Lose
+RegExMatch(OPGG, "<span class=""Win"">94승</span>(.*?)</div>", lose)
+Stringreplace, lose, lose, <span class="Win">94승</span>,,All
+Stringreplace, lose, lose, </div>,,All
+*/
+/*
+RegExMatch(OPGG, "<span class=""winratio"">((.*?)))", winratio)
 Stringreplace, winratio, winratio, <span class="winratio">(,,All
 Stringreplace, winratio, winratio, <span class="winratio">,,All
 Stringreplace, winratio, winratio,  ),,All
 Stringreplace, winratio, winratio,  </span>,,All
-
-RegExMatch(OPGG, "data-username=""(.*?)""", SummonerName)
-Stringreplace, SummonerName, SummonerName, ",,All
-Stringreplace, SummonerName, SummonerName, data-username=,,All
+*/
+RegExMatch(OPGG, "<span class=""Name"">(.*?)</span>", SummonerName)
+Stringreplace, SummonerName, SummonerName, <span class="Name">,,All
+Stringreplace, SummonerName, SummonerName, </span>,,All
 
 ;RegExMatch(OPGG, "<div class=""WinRatioText"">(.*?)%</div>" WinRatioText)
 ;Stringreplace, SummonerName, SummonerName, <div class="WinRatioText">,,All
 ;Stringreplace, SummonerName, SummonerName, </div>,,All
-RegExMatch(OPGG, "<span class=""name"">(.*?)</span>", MostChamp)
-Stringreplace, MostChamp, MostChamp, <span class="name">,,All
-Stringreplace, MostChamp, MostChamp, </span>,,All
-RegExMatch(OPGG, "<span class=""kda average"">(.*?)</span>", MostChampKDA)
-Stringreplace, MostChampKDA, MostChampKDA, <span class="kda average">,,All
+
+;MOST CHAMPION
+;<div class="ChampionName" title="리 신">
+RegExMatch(OPGG, "<div class=""ChampionName"" title=""(.*?)"">", MostChamp)
+Stringreplace, MostChamp, MostChamp, <div class="ChampionName" title=",,All
+Stringreplace, MostChamp, MostChamp, ">,,All
+
+;KDA
+;<span class="KDA">2.09:1</span>
+RegExMatch(OPGG, "<span class=""KDA"">(.*?)</span>", MostChampKDA)
+Stringreplace, MostChampKDA, MostChampKDA, <span class="KDA">,,All
 Stringreplace, MostChampKDA, MostChampKDA, </span>,,All
 
 RegExMatch(OPGG, "title=""래더 랭킹 목록에서 보기"" target=""_blank"">(.*?)</span>", rank_S)
@@ -64,6 +74,6 @@ Stringreplace, rank_B, rank_B, %A_TAB%,,All
 Stringreplace, rank_B, rank_B, </a>,,All
 Stringreplace, rank_B, rank_B, 위,위,All
 
-msgbox,,리그오브레전드 전적 검색 결과 입니다., 리그오브레전드 전적검색`n`n%SummonerName% 님의 티어는 %tier% 입니다.`nWin : %win% Lose : %lose% (%winratio%)`n모스트 1 챔피언은 %MostChamp% KDA : %MostChampKDA% 입니다.%rank_S%%rank_B%
+msgbox,,리그오브레전드 전적 검색 결과 입니다., 리그오브레전드 전적검색`n`n%SummonerName% 님의 티어는 %tier% 입니다.`n모든 랭크게임 승률은 %win%`n모스트 1 챔피언은 %MostChamp% KDA : %MostChampKDA% 입니다.%rank_S%%rank_B%
 Filedelete, templol.txt
 }
