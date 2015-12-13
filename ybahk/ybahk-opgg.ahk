@@ -1,6 +1,6 @@
 FileEncoding, UTF-8 ; UTF-8
 OPGG(){
-inputbox, OP, ë¦¬ê·¸ì˜¤ë¸Œë ˆì „ë“œ ì „ì ê²€ìƒ‰, ê²€ìƒ‰í•  ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”,,300,100
+inputbox, OP, ¸®±×¿Àºê·¹Àüµå ÀüÀû°Ë»ö, °Ë»öÇÒ ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä,,300,100
 if ErrorLevel
 return
 else
@@ -16,13 +16,13 @@ Stringreplace, tier, tier, 2,II,All
 Stringreplace, tier, tier, 3,III,All
 Stringreplace, tier, tier, 4,IV,All
 Stringreplace, tier, tier, 5,V,All
-Stringreplace, tier, tier, Bronze,ë¸Œë¡ ì¦ˆ,All
-Stringreplace, tier, tier, Silver,ì‹¤ë²„,All
-Stringreplace, tier, tier, Gold,ê³¨ë“œ,All
-Stringreplace, tier, tier, Platinum,í”Œë ˆí‹°ë„˜,All
-Stringreplace, tier, tier, Diamond,ë‹¤ì´ì•„,All
-Stringreplace, tier, tier, Master,ë§ˆìŠ¤í„°,All
-Stringreplace, tier, tier, Challenger,ì±Œë¦°ì €,All
+Stringreplace, tier, tier, Bronze,ºê·ĞÁî,All
+Stringreplace, tier, tier, Silver,½Ç¹ö,All
+Stringreplace, tier, tier, Gold,°ñµå,All
+Stringreplace, tier, tier, Platinum,ÇÃ·¹Æ¼³Ñ,All
+Stringreplace, tier, tier, Diamond,´ÙÀÌ¾Æ,All
+Stringreplace, tier, tier, Master,¸¶½ºÅÍ,All
+Stringreplace, tier, tier, Challenger,Ã§¸°Àú,All
 
 ;Win
 RegExMatch(OPGG, "<span class=""Win"">(.*?)\)", win)
@@ -31,8 +31,8 @@ Stringreplace, win, win, </span>,,All
 Stringreplace, win, win, </div>,,All
 /*
 ;Lose
-RegExMatch(OPGG, "<span class=""Win"">94ìŠ¹</span>(.*?)</div>", lose)
-Stringreplace, lose, lose, <span class="Win">94ìŠ¹</span>,,All
+RegExMatch(OPGG, "<span class=""Win"">94½Â</span>(.*?)</div>", lose)
+Stringreplace, lose, lose, <span class="Win">94½Â</span>,,All
 Stringreplace, lose, lose, </div>,,All
 */
 /*
@@ -51,7 +51,7 @@ Stringreplace, SummonerName, SummonerName, </span>,,All
 ;Stringreplace, SummonerName, SummonerName, </div>,,All
 
 ;MOST CHAMPION
-;<div class="ChampionName" title="ë¦¬ ì‹ ">
+;<div class="ChampionName" title="¸® ½Å">
 RegExMatch(OPGG, "<div class=""ChampionName"" title=""(.*?)"">", MostChamp)
 Stringreplace, MostChamp, MostChamp, <div class="ChampionName" title=",,All
 Stringreplace, MostChamp, MostChamp, ">,,All
@@ -62,18 +62,18 @@ RegExMatch(OPGG, "<span class=""KDA"">(.*?)</span>", MostChampKDA)
 Stringreplace, MostChampKDA, MostChampKDA, <span class="KDA">,,All
 Stringreplace, MostChampKDA, MostChampKDA, </span>,,All
 
-RegExMatch(OPGG, "title=""ë˜ë” ë­í‚¹ ëª©ë¡ì—ì„œ ë³´ê¸°"" target=""_blank"">(.*?)</span>", rank_S)
-Stringreplace, rank_S, rank_S, title="ë˜ë” ë­í‚¹ ëª©ë¡ì—ì„œ ë³´ê¸°" target="_blank">,,All
+RegExMatch(OPGG, "title=""·¡´õ ·©Å· ¸ñ·Ï¿¡¼­ º¸±â"" target=""_blank"">(.*?)</span>", rank_S)
+Stringreplace, rank_S, rank_S, title="·¡´õ ·©Å· ¸ñ·Ï¿¡¼­ º¸±â" target="_blank">,,All
 Stringreplace, rank_S, rank_S, <span class="ranking">,,All
 Stringreplace, rank_S, rank_S, </span>,,All
 Stringreplace, rank_S, rank_S, %A_TAB%,,All
 
-RegExMatch(OPGG, "</span>ìœ„(.*?)</a>", rank_B)
+RegExMatch(OPGG, "</span>À§(.*?)</a>", rank_B)
 Stringreplace, rank_B, rank_B, </span>,,All
 Stringreplace, rank_B, rank_B, %A_TAB%,,All
 Stringreplace, rank_B, rank_B, </a>,,All
-Stringreplace, rank_B, rank_B, ìœ„,ìœ„,All
+Stringreplace, rank_B, rank_B, À§,À§,All
 
-msgbox,,ë¦¬ê·¸ì˜¤ë¸Œë ˆì „ë“œ ì „ì  ê²€ìƒ‰ ê²°ê³¼ ì…ë‹ˆë‹¤., ë¦¬ê·¸ì˜¤ë¸Œë ˆì „ë“œ ì „ì ê²€ìƒ‰`n`n%SummonerName% ë‹˜ì˜ í‹°ì–´ëŠ” %tier% ì…ë‹ˆë‹¤.`nëª¨ë“  ë­í¬ê²Œì„ ìŠ¹ë¥ ì€ %win%`nëª¨ìŠ¤íŠ¸ 1 ì±”í”¼ì–¸ì€ %MostChamp% KDA : %MostChampKDA% ì…ë‹ˆë‹¤.%rank_S%%rank_B%
+msgbox,,¸®±×¿Àºê·¹Àüµå ÀüÀû °Ë»ö °á°ú ÀÔ´Ï´Ù., ¸®±×¿Àºê·¹Àüµå ÀüÀû°Ë»ö`n`n%SummonerName% ´ÔÀÇ Æ¼¾î´Â %tier% ÀÔ´Ï´Ù.`n¸ğµç ·©Å©°ÔÀÓ ½Â·üÀº %win%`n¸ğ½ºÆ® 1 Ã¨ÇÇ¾ğÀº %MostChamp% KDA : %MostChampKDA% ÀÔ´Ï´Ù.%rank_S%%rank_B%
 Filedelete, templol.txt
 }
